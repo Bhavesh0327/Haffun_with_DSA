@@ -1,8 +1,10 @@
 #include<iostream>
+#include<cstring>
+#include<strings.h>
 
 using namespace std;
 
-int lcs(string a, string b , int n , int m){
+void printLCS(string a, string b , int n , int m){
     int t[n+1][m+1],i,j;
     for(i=0;i<=n;i++){
         t[i][0] = 0;
@@ -20,7 +22,26 @@ int lcs(string a, string b , int n , int m){
             }
         }
     }
-    return t[n][m];
+    string s;
+    while(i>0&&j>0){
+        if(a[i-1]==b[j-1]){
+            s.push_back(a[i-1]);
+            i--;
+            j--;
+        }
+        else{
+            if(t[i-1][j]>t[i][j-1]){
+                i--;
+            }
+            else{
+                j--;
+            }
+        }
+    }
+    for(i=0;i<s.size()/2;i++){
+        swap(s[i],s[s.size()-i]);
+    }
+    cout << s << endl;
 }
 
 int main(){
@@ -28,10 +49,8 @@ int main(){
     cin >> t;
     while(t--){
         string a,b;
-        int n,m;
-        cin >> n >> m;
         cin >> a >> b;
-        cout << lcs(a,b,n,m) << endl;
+        printLCS(a , b  , a.size(), b.size());
     }
     return 0;
 }

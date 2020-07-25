@@ -28,10 +28,8 @@ int main(){
     cin >> t;
     while(t--){
         string a,b;
-        int n,m;
-        cin >> n >> m;
         cin >> a >> b;
-        cout << lcs(a,b,n,m) << endl;
+        cout << a.size()+b.size()-lcs(a,b,a.size(),b.size()) << endl;
     }
     return 0;
 }
