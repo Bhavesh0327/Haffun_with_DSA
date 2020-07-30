@@ -7,6 +7,9 @@ using namespace std;
 
 int mcm(int a[],int n){
     int m[n][n],i,j,k,q,d;
+    memset(m , 0 , sizeof(m));
+    int s[n][n] ;
+    memset(s , 0 , sizeof(s));
     for(i=1;i<n;i++){
         m[i][i] = 0;
     }
@@ -18,6 +21,7 @@ int mcm(int a[],int n){
                 q = m[i][k]+ m[k+1][j] + a[i-1]*a[k]*a[j];
                 if(q<m[i][j]){
                     m[i][j] = q;
+                    s[i][j] = k;
                 }
             }
         }
