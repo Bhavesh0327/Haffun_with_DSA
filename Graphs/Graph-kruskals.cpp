@@ -6,6 +6,12 @@ class Edge{
     public:
     int dest, src, weight;
 };
+static auto __io_speed_up = [](){
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  std::cout.tie(nullptr);
+  return nullptr;  
+}();
 class Graph{
     public:
     int V,E;
