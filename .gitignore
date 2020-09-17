@@ -1,5 +1,5 @@
 *.exe
 *test
-*.vscode/
+.vscode
 main.cpp
 output
