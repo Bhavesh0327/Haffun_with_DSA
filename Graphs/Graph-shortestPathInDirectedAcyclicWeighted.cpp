@@ -93,7 +93,7 @@ int main(){
     g.addEdge(2, 3, 7); 
     g.addEdge(3, 4, -1); 
     g.addEdge(4, 5, -2);
-    int s = 1;
+    int s = 3;
     g.shortestPath(s);
     return 0;
 }
